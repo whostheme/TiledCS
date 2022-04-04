@@ -241,7 +241,14 @@ namespace TiledCS
                     obj.gid = int.Parse(objectNode.Attributes["gid"]?.Value ?? "0");
                     obj.x = float.Parse(objectNode.Attributes["x"].Value, CultureInfo.InvariantCulture);
                     obj.y = float.Parse(objectNode.Attributes["y"].Value, CultureInfo.InvariantCulture);
-
+                    if (objectNode.Attributes["width"] != null)
+                    {
+                        obj.width = float.Parse(objectNode.Attributes["width"].Value, CultureInfo.InvariantCulture);
+                    }
+                    if (objectNode.Attributes["height"] != null)
+                    {
+                        obj.height = float.Parse(objectNode.Attributes["height"].Value, CultureInfo.InvariantCulture);
+                    }
                     if (nodePolygon != null)
                     {
                         var points = nodePolygon.Attributes["points"].Value;
